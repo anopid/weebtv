@@ -1,0 +1,45 @@
+<resources>
+    
+    <string name="app_plugin_requirments">Add-On Dodatek wymagania</string>
+    <string name="app_plugin_has_installed_xmtvplayer">Gracz instelled XMTV</string>
+    <string name="app_plugin_has_correct_xmtvplayer_version">XMTV wersji</string>
+    <string name="app_plugin_download_xmtvplayer">Pobierz za darmo XMTV Player</string>
+    
+    <string name="app_plugin_has_correct_update">Aktualizacja</string>
+    <string name="app_plugin_has_correct_launch">Start XMTV</string>
+    
+    <string name="app_plugin_password_set">Hasło jest zapisane</string>
+    <string name="app_plugin_password_clear">Hasło jest wyczyszczone</string>
+
+    <string name="app_plugin_ua_create">Tworzenie</string>
+    
+    
+    
+    <string name="app_plugin_username">Nazwa użytkownika:</string>
+    <string name="app_plugin_password">Hasło:</string>
+    <string name="app_plugin_ua_req">Konto użytkownika nie jest obowiązkowe, ale jeśli chcesz utworzyć jeden iść do weeb.tv witryny lub naciśnij przycisk \"Utwórz\". Jeśli nie - po prostu wybierz \"Uruchom XMTV\".</string>
+    <string name="app_plugin_ua_set">Stosuje się</string>
+    <string name="app_plugin_ua_clear">Badanie</string>
+    
+    <string name="app_name">WeebTV</string>
+    <string name="app_text_clean">Popularne kanały, na żywo, 24h na ekranie twojego telefon. Miejsce gdzie znajdziesz polską telewizje!\r\nProsta droga do telewizji. Wystarczy telefon i oglądaj za darmo już teraz!\r\nwww.weeb.tv</string>
+    <string name="app_text">
+<![CDATA[
+<html>
+ <head></head>
+ <body style="text-align:justify;">
+  <B>WeebTV to dodatek dla odtwarzacza XMTV</B>.<BR/><BR/>
+  Jeśli masz istniejące konto na weeb.tv wprowadź dane konta w dodatku.<BR/>
+  Aby używać WeebTV dodatek start XMTV Player, przejdź do sekcji plugins i powinieneś zobaczyć, że tam wymienione.<BR/><BR/>
+  Popularne kanały, na żywo, 24h na ekranie twojego telefon. Miejsce gdzie znajdziesz polską telewizje!
+Prosta droga do telewizji. Wystarczy telefon i oglądaj za darmo już teraz!<BR/>
+<center>
+<a href="http://www.weeb.tv?referrer=xmtvplayer.com">WEEB TV</a>
+</center>
+ </body>
+</html>
+
+]]>
+    </string>
+
+</resources>

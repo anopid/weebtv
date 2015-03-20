@@ -1,0 +1,45 @@
+<resources>
+
+    <string name="app_plugin_requirments">Plugin requirments</string>
+    <string name="app_plugin_has_installed_xmtvplayer">Instelled XMTV Player</string>
+    <string name="app_plugin_has_correct_xmtvplayer_version">XMTV Player Version</string>
+    <string name="app_plugin_download_xmtvplayer">Download XMTV Player</string>
+    
+    <string name="app_plugin_has_correct_update">Update</string>
+    <string name="app_plugin_has_correct_launch">Launch XMTV</string>
+    
+    <string name="app_plugin_password_set">Password is saved</string>
+    <string name="app_plugin_password_clear">Password is cleared</string>
+    
+    <string name="app_plugin_ua_create">Create</string>
+    
+    <string name="app_plugin_username">Username:</string>
+    <string name="app_plugin_password">Password:</string>
+    <string name="app_plugin_ua_req">User account is not mandatory, but if you want to create one go to weeb.tv site or tap \"Create\" button. If not - just tap \"Launch XMTV\".</string>
+    <string name="app_plugin_ua_set">Apply</string>
+    <string name="app_plugin_ua_clear">Reset</string>
+
+    
+    <string name="app_name">WeebTV</string>
+    <string name="app_text_clean">A place where you can find a Polish TV!\r\nPopular channels, live, 24 on the screen of your phone.\r\nThe easy way to television. Just phone and watch for free right now!\r\n\r\n\r\nwww.weeb.tv</string>
+    <string name="app_text">
+<![CDATA[
+<html>
+ <head></head>
+ <body style="text-align:justify;">
+  <B>WeebTV is add-on for XMTV Player</B>.<BR/><BR/>
+  If you have existing account on weeb.tv enter your account data in add-on.<BR/>
+  To use WeebTV add-on start XMTV Player, navigate to plugins section and you should see it listed there.<BR/><BR/>
+  A place where you can find a Polish TV!
+Popular channels, live, 24 on the screen of your phone.
+The easy way to television. Just phone and watch for free right now!<BR/>
+<center>
+<a href="http://www.weeb.tv">WEEB TV</a>
+</center>
+ </body>
+</html>
+
+]]>
+    </string>
+
+</resources>

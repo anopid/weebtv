@@ -1,0 +1,38 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xmtvplayer.plugin.weebtv"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="21" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <service
+            android:name="com.xmtvplayer.plugin.weebtv.RemoteService"
+            android:exported="true"
+            android:permission="com.xmtvplayer.watch.live.streams.permission.C2D_MESSAGE_BIND"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.xmtvplayer.plugin.weebtv.service" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.xmtvplayer.plugin.weebtv.WeebTVActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="xmtvplugin"
+            android:value="com.xmtvplayer.plugin.weebtv.service" />
+    </application>
+
+</manifest>
