@@ -52,7 +52,6 @@ public class RemoteService extends Service {
 			return "{\"adskey\":\"15E56089-CB15-AFCF-1A3B-574E899DE008\",\"mintime\":30}";
 		}
 
-
 		@Override
 		public String GetChannelInfoByID(String ChannelID)
 				throws RemoteException {
@@ -105,13 +104,14 @@ public class RemoteService extends Service {
 				String playPath = hParams.get("11");
 				String bitrate = hParams.get("20");
 				String token = hParams.get("73");
-				String url = "rtmp://$OPT:rtmp-raw=" + rtmpLink + "/"
-						+ playPath + " live=1 pageUrl=token swfUrl=" + token;
+				// String url = "rtmp://$OPT:rtmp-raw=" + rtmpLink + "/"
+				// + playPath + " live=1 pageUrl=token swfUrl=" + token;
 
-				// String url = "rtmp://$OPT:rtmp-raw=" + rtmpLink + "/" +
-				// playPath +
-				// " swfUrl=http://static.weeb.tv/player.swf live=1 weeb="
-				// +token + " pageUrl=http://weeb.tv/channel/" + ChannelID ;
+				String url = "rtmp://$OPT:rtmp-raw=" + rtmpLink + "/" +
+						playPath +
+						" swfUrl=http://static.weeb.tv/player.swf live=1 weeb="
+						+ token + " pageUrl=http://weeb.tv/channel/" + ChannelID;
+				Log.e("weebtv", url);
 				return url;
 			}
 			return "";
@@ -218,16 +218,16 @@ public class RemoteService extends Service {
 
 		}
 
-
 		private boolean init_session() {
 			CheckCallingUid();
 			SharedPreferences prefs = null;
 			prefs = getSharedPreferences("settings", 1);
-			if ( (!prefs.getString("u", "").equals("")) &&  (!prefs.getString("p", "").equals("")) ){
-				auth_string = "&username=" + prefs.getString("u", "") + "&userpassword=" +prefs.getString("p", "");
+			if ((!prefs.getString("u", "").equals("")) && (!prefs.getString("p", "").equals(""))) {
+				auth_string = "&username=" + prefs.getString("u", "") + "&userpassword=" + prefs.getString("p", "");
+			} else {
+				auth_string = "";
 			}
-			
-			
+
 			return true;// (session_key != null);
 
 		}
@@ -255,6 +255,7 @@ public class RemoteService extends Service {
 	};
 
 	private String getJSON(String address) {
+		Log.e("weebtv", address);
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(address);

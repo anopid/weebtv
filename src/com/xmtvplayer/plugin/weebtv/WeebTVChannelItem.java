@@ -8,21 +8,22 @@ public class WeebTVChannelItem {
 	private String type;
 	private String title;
 	private String icon;
-	private String description; 
+	private String description;
 	private String intent;
 	private String uri;
 
-	private boolean is_free; 
+	private boolean is_free;
 	private boolean is_adult;
-	private boolean is_paid;  
+	private boolean is_paid;
 	private boolean is_seekable;
-	
+
 	private boolean has_tvguide;
 
-	public WeebTVChannelItem(String type, String title, String uri, String icon, String description, String intent, boolean is_free, boolean is_adult, boolean is_paid, boolean has_tvguide, boolean is_seekable) {
+	public WeebTVChannelItem(String type, String title, String uri, String icon, String description, String intent, boolean is_free, boolean is_adult, boolean is_paid, boolean has_tvguide,
+			boolean is_seekable) {
 		this.setUri(uri);
 		this.type = type;
-		this.title = title; 
+		this.title = title;
 		this.icon = icon;
 		this.description = description;
 		this.intent = intent;

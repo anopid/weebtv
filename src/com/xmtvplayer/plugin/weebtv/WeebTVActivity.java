@@ -34,9 +34,14 @@ public class WeebTVActivity extends FragmentActivity {
 		super.onCreate(arg0);
 		this.context = this;
 		prefs = context.getSharedPreferences("settings", 1);
+
 		setContentView(R.layout.playtv_activity);
-		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);		    
-		
+
+		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+		((EditText) findViewById(R.id.editUsername)).setText(prefs.getString("u", "").trim());
+		((EditText) findViewById(R.id.editPassword)).setText(prefs.getString("p", "").trim());
+
 		WebView view = new WebView(this);
 		view.setVerticalScrollBarEnabled(false);
 		((LinearLayout) findViewById(R.id.base)).addView(view);
@@ -61,7 +66,8 @@ public class WeebTVActivity extends FragmentActivity {
 					.setText("XMTV Player available");
 			((TextView) findViewById(R.id.textView2)).setText(getResources().getString(R.string.app_plugin_has_correct_xmtvplayer_version));
 			((Button) findViewById(R.id.buttonAction)).setText(getResources().getString(R.string.app_plugin_has_correct_launch));
-			//((Button) findViewById(R.id.buttonAction)).setVisibility(View.GONE);
+			// ((Button)
+			// findViewById(R.id.buttonAction)).setVisibility(View.GONE);
 		} else {
 			((ImageView) findViewById(R.id.imageView1))
 					.setImageResource(R.drawable.ok);
@@ -71,49 +77,47 @@ public class WeebTVActivity extends FragmentActivity {
 					.setText("XMTV Player available");
 			((TextView) findViewById(R.id.textView2)).setText(getResources().getString(R.string.app_plugin_has_correct_xmtvplayer_version));
 			((Button) findViewById(R.id.buttonAction)).setText(getResources().getString(R.string.app_plugin_has_correct_update));
-			
+
 		}
-		
-		
-		
+
 		((Button) findViewById(R.id.btnCreateUser))
-		.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				showWebSite("http://weeb.tv/account/login");
-			}
-			
-		});
-		
-		
+				.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						showWebSite("http://weeb.tv/account/login");
+					}
+
+				});
+
 		((Button) findViewById(R.id.btnSetUser))
-		.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Editor e =  prefs.edit();
-				e.putString("u", ((EditText)findViewById(R.id.editUsername)).getText().toString().trim());
-				e.putString("p", ((EditText)findViewById(R.id.editPassword)).getText().toString().trim());
-				e.commit();
-				Toast.makeText(context,getResources().getString(R.string.app_plugin_password_set) , Toast.LENGTH_LONG).show();
-				
-			}
-			
-		});
+				.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Editor e = prefs.edit();
+						e.putString("u", ((EditText) findViewById(R.id.editUsername)).getText().toString().trim());
+						e.putString("p", ((EditText) findViewById(R.id.editPassword)).getText().toString().trim());
+						e.commit();
+						Toast.makeText(context, getResources().getString(R.string.app_plugin_password_set), Toast.LENGTH_LONG).show();
+
+					}
+
+				});
 		((Button) findViewById(R.id.btnClearUser))
-		.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Editor e =  prefs.edit();
-				e.putString("u", "");
-				e.putString("p", "");
-				e.commit();
-				Toast.makeText(context,getResources().getString(R.string.app_plugin_password_clear) , Toast.LENGTH_LONG).show();
-			}
-		});
-		
+				.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Editor e = prefs.edit();
+						e.putString("u", "");
+						e.putString("p", "");
+						e.commit();
+						((EditText) findViewById(R.id.editUsername)).setText("");
+						((EditText) findViewById(R.id.editPassword)).setText("");
+						Toast.makeText(context, getResources().getString(R.string.app_plugin_password_clear), Toast.LENGTH_LONG).show();
+					}
+				});
 
 		((Button) findViewById(R.id.buttonAction))
 				.setOnClickListener(new OnClickListener() {
@@ -123,8 +127,8 @@ public class WeebTVActivity extends FragmentActivity {
 						// TODO Auto-generated method stub
 						if (ver == -1) {
 							OpenGooglePlayStore(context);
-							//AmazonApps();
-							//OpenSlideMe(context);
+							// AmazonApps();
+							// OpenSlideMe(context);
 						} else if (ver >= minVer) {
 
 							PackageManager pm = context.getPackageManager();
@@ -139,23 +143,23 @@ public class WeebTVActivity extends FragmentActivity {
 							catch (ActivityNotFoundException e) {
 							}
 						} else {
-							//OpenSlideMe(context);
-						     OpenGooglePlayStore(context);
-							//AmazonApps();
+							// OpenSlideMe(context);
+							OpenGooglePlayStore(context);
+							// AmazonApps();
 						}
 
 					}
 				});
 
 	}
-	
+
 	private void showWebSite(String url) {
-        String _url = url;
-        //Activity webactivity = new Activity(); Not required
-        Intent webIntent = new Intent( Intent.ACTION_VIEW );
-        webIntent.setData( Uri.parse(_url) );
-        this.startActivity( webIntent );
-}
+		String _url = url;
+		// Activity webactivity = new Activity(); Not required
+		Intent webIntent = new Intent(Intent.ACTION_VIEW);
+		webIntent.setData(Uri.parse(_url));
+		this.startActivity(webIntent);
+	}
 
 	public static boolean isXMTVPlayerAvailable(Context context) {
 		PackageManager pm = context.getPackageManager();
@@ -224,7 +228,7 @@ public class WeebTVActivity extends FragmentActivity {
 		try {
 			startActivity(intent);
 		} catch (Exception e) {
-			// 
+			//
 			intent = new Intent();
 			string_of_uri = "http://www.amazon.com/gp/mas/dl/android?p=com.xmtvplayer.watch.live.streams";
 			intent.setData(Uri.parse(string_of_uri)); // The string_of_uri is an
@@ -242,7 +246,6 @@ public class WeebTVActivity extends FragmentActivity {
 				startActivity(intent);
 			} catch (Exception e1) {
 			}
-			
 
 		}
 

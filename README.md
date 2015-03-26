@@ -1,4 +1,4 @@
-<p># weebtv<br>
+<p>#weebtv<br>
    Android WeebTV Add-on for XMTV Player <br>
  </p>
  <p>requirements:<br>
