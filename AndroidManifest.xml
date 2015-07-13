@@ -17,7 +17,7 @@
             android:permission="com.xmtvplayer.watch.live.streams.permission.C2D_MESSAGE_BIND"
             android:process=":remote" >
             <intent-filter>
-                <action android:name="com.xmtvplayer.plugin.weebtv.service" />
+                <action android:name="com.xmtvplayer.plugin.nbtv.service" />
             </intent-filter>
         </service>
 
